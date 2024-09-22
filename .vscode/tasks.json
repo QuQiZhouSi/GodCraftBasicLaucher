@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "g++.exe build active file",
+        "command": "C://mingw64//bin//g++.exe",
+        "args": [
+          "-g",
+          "${file}",
+          "-o",
+          "${fileDirname}\\${fileBasenameNoExtension}.exe",
+          "-I", "C:/curl/include",  // 指定 libcurl 头文件路径
+          "-L", "C:/curl/lib",       // 指定 libcurl 库路径
+          "-lcurl"                   // 链接 libcurl 库
+        ],
+        "options": {
+          "cwd": "C://mingw64//bin"
+        },
+        "problemMatcher": ["$gcc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
